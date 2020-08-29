@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+    myservice:
+        image: nginx
+        networks:
+            - mynetwork
+networks:
+    mynetwork:
+        driver: overlay
+        driver_opts:
+            subnet: "255.255.255.0"
+            IPAddress: "10.0.0.2"
+            

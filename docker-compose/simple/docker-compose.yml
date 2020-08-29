@@ -1,0 +1,14 @@
+version: '3.0'
+services:
+    web:
+        image: alicek106/composetest:web
+        depends_on: 
+            - mysql
+        ports:
+            - "18080:80"
+        links:
+            - mysql:db
+        command: apache2ctl -D FOREGROUND
+    mysql:
+        image: alicek106/composetest:mysql
+        command: mysqld

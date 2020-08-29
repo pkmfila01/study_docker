@@ -1,0 +1,9 @@
+version: '3.0'
+services:
+    web:
+        image: alicek106/composetest:web
+        volumes: 
+            - myvolume:/var/www/html
+volumes:
+    myvolume:
+        external: true
